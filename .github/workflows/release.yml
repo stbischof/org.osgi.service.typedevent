@@ -1,7 +1,7 @@
 # Managed by otterdog blueprint require-ci-workflows. Do not edit here.
 # CI logic lives in osgi/.github (reusable workflow).
 # A release is cut by pushing a tag that equals the pom version (no prefix);
-# the central workflow refuses a tag that does not match .mvn/maven.config.
+# the central workflow refuses a tag that does not match the version.
 name: release
 on:
   push:
@@ -11,5 +11,5 @@ permissions:
   contents: read
 jobs:
   release:
-    uses: osgi/.github/.github/workflows/spec-release.yml@main
+    uses: stbischof/.github_osgi/.github/workflows/spec-release.yml@central-actions
     secrets: inherit
